@@ -1,0 +1,111 @@
+<?php
+
+	class OoAZPage extends Page{
+		
+                function canDelete($Member = null){
+                    if(permission::check('SUPERUSER')){
+                        return true;
+                    }else{
+                        return false;
+                    }
+                }		
+
+	}
+	
+	class OoAZPage_Controller extends Page_Controller{
+            
+            public function AzContent() {
+                
+                if ($searchLetter=$this->getRequest()->getVar('SearchLetter')) {
+                    // 
+                }  else {
+                    // default to a
+                    $searchLetter = 'a';
+                }
+                        
+                $fetch = new RestfulService(
+                    'https://api.openobjects.com/rest/v1/suffolkatoz/records'                        
+                );
+                
+                $query = '(showon:waveney) AND titleletter:'.$searchLetter;
+                //$query = '(showon:suffolk OR showon:waveney OR showon:suffolkcoastal) AND titleletter:'.$searchLetter;
+                
+                $fetch->setQueryString(array(
+                    'key' => 'cfe205e7-de10-4b5b-89f1-262b154619f2',
+                    'sortField' => 'title',
+                    'sortType' => 'field', 
+                    'sortOrder' => '0',
+                    'query' => $query
+                ));
+
+                // perform the query
+                $conn = $fetch->request();
+
+                $msgs = $fetch->getValues($conn->getBody(), "record");
+
+                // generate output for the template
+                $output         = '';
+                $previousHeader = '';
+                $pageTitle=$this->Title;
+                if($msgs) {
+                    $linesToSort = array();
+                    $heading     = '';
+                    foreach($msgs as $msg) {
+                        //$output .= '<li>';
+                        if ($msg->title != $previousHeader) {
+                            $previousHeader = $msg->title;
+                            $output.=$heading;
+                            sort($linesToSort);
+                            foreach($linesToSort as $line) {
+                                $output.=$line;
+                            }
+                            $output.='</ul>';
+                            
+                            $linesToSort = array();
+                        }
+                        switch ($msg->provider) {
+                            case 'babergh':
+                                $provider='Babergh District Council';
+                                break;
+                            case 'midsuffolk':
+                                $provider='Mid-Suffolk District Council';
+                                break;
+                            case 'ipswich':
+                                $provider='Ipswich Borough Council';
+                                break; 
+                            case 'stedmundsbury':
+                                $provider='St Edmundsbury Borough Council';
+                                break;                             
+                            case 'forestheath':
+                                $provider='Forest Heath District Council';
+                                break;
+                            case 'waveney':
+                                $provider='Waveney District Council';
+                                break;
+                            case 'suffolkcoastal':
+                                $provider='Suffolk Coastal District Council';
+                                break;
+                            case 'suffolk':
+                                $provider='Suffolk County Council';
+                                break;
+                            default:
+                                $provider='error - no provider';
+                                break;                                
+                        }
+                        //$thisLine = '<li class="'.$msg->entry_title.$provider.'"><a href="'.$msg->url.'">'.$msg->entry_title.'</a> ('.$provider.')</li>';
+                        $thisLine = '<li class="'.$msg->entry_title.$provider.'"><a href="'.$msg->url.'">'.$msg->entry_title.'</a></li>';
+                        if ($msg->synonym_service_tag_title) {
+                            $thisLine = '<li class="'.$msg->entry_title.$provider.'"><a href="'.$this->Link().'/?SearchLetter='.substr($msg->synonym_service_tag_title,0,1).'">See '.$msg->synonym_service_tag_title.'</a> ('.$provider.')</li>';
+                        }
+                        array_push($linesToSort,$thisLine);
+                        $heading = '<h2>'.$msg->title.'</h2><ul>';
+                        
+                    }
+                }                 
+                return $output;                     
+            }
+            
+   
+
+            
+        }

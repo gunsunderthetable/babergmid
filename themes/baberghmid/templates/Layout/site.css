@@ -1,0 +1,745 @@
+/*  Created on : July-2015 | Author : Adrian Lynch */ 
+
+#sidr, .mobile, .tablet, a.mobileNav {display:none;}
+
+h1,h2,h3,h4,h5 {
+    font-family:"open-sans", arial, sans-serif;
+    font-weight:900;
+}
+
+p {
+    font-size:1.1em;
+    line-height:1.5;
+}
+
+a {color:#0767B2}
+a:hover {color:silver;}
+
+/*---------------------------header----------------------------------*/
+.headerPanel {
+    background-color:#00708A;
+    height:200px;
+    position:relative;
+    color:white;
+    position:relative;
+}
+
+#headerText {
+    width:35%;
+    float:left;
+    padding:50px 0 0 2%;
+}
+#headerText img {
+    width:80%;
+    height:auto;
+    padding-top:20px;
+}
+
+#headerTools {
+    width:55%;
+    height:200px;
+    float:right;
+    position:relative
+}
+
+#headerTools p {
+    text-align:right;
+    padding:10px 5% 0 0;
+}
+#headerTools img.strapline {
+    width:85%;
+    float:right;
+    height:auto;
+    display:block;
+    padding:20px 5% 0 0;
+}
+
+#headerTools p a {
+    color:white;
+    font-size: 0.8em;
+    line-height: 0.8;
+}
+
+#headerTools p a:hover {
+    color:silver;
+}
+
+#headerTools p.searchText {
+    /*padding-top:50px;*/
+    clear:right;
+    font-size:1.35em;
+    font-family:"open-sans", arial, sans-serif;
+}
+#socialButtons {
+    float:right;
+    padding-right:5%;
+    height:40px;
+}
+#socialButtons img:hover {
+    opacity:0.6;
+}
+/*-------------------------------------- search ------------------------------------------*/
+#searchWrapper {
+    height:40px;
+    width:85%;
+    padding:10px 5% 0 0;
+    float:right;
+}
+
+#mobileSearchWrapper {
+    position:relative;
+    z-index:11;
+    display:none;
+}
+
+form#SearchForm_SearchForm {
+    width:100%;
+    margin:0 auto;
+    height:39px;
+    background:white url(../images/search_bg.png) no-repeat top right;
+    position:relative;
+    padding:0;
+}
+
+form#SearchForm_SearchForm .middleColumn {
+    width:70%;
+    float:left;
+    height:20px;
+}
+
+form#SearchForm_SearchForm input[type="text"] {
+    background:transparent;
+    color:black;
+    position:absolute;
+    top:0;
+    left:0;
+    border:0;
+}
+form#SearchForm_SearchForm input[type="submit"] {
+    position:absolute;
+    right:0;
+    top:6px;
+    width:45px;
+    color:transparent;
+    padding-right:0px;
+    text-shadow:none;
+    background:transparent;
+    border:0;
+}
+
+
+
+/*-------------------------homepage sidebar ----------------------------*/
+.sideBar {
+    width:26.5%;
+    float:left;
+    margin:0 0 3% 2%;
+}
+
+.sideBar h2 {
+   font-size:1.3em;
+   padding:6px 0 8px 12px;
+   margin:0;
+   background:#5A9AB0;
+}
+
+.sideBar .feature {
+    padding:3.5% 20% 4.5% 4%;
+    margin-bottom:2px;
+    background:#ececec url(../images/right_arrow_blank.png) no-repeat center right;
+    background-position:94% 10%;
+}
+.sideBar .feature.first {
+    margin-bottom:0;
+}
+.sideBar.homePage a {
+    color:black;
+}
+.sideBar.homePage a:hover {
+    color:silver;
+}
+
+.sideBar .feature h3 {
+    font-size:1.3em;
+    font-weight:800;
+    margin:0 0 .2em 0;
+    line-height:1.1;
+}
+.sideBar .feature p {
+    margin-bottom:1%;
+    line-height:1.2;
+}
+.sideBar h2.newsHeader {
+    margin-top:20px;
+}
+.sideBar .iHateSpacers {
+    height:2px;
+}
+.sideBar img.featureImg {
+    width:100%;
+    height:auto;
+}
+
+.imgWrapper {
+    padding:0;
+    margin-bottom:-5px;
+}
+/*---------------------------main homepage panel-----------------------*/
+#homePanel {
+    /*    the wrapper for the boxes*/
+    width:70%;
+    float:right;
+    overflow:hidden;
+    margin-bottom:2%;
+}
+.linksJobs {
+    width:60%;
+    float:left;
+}
+#homeLinks, #jobs {
+    padding:0;
+    margin:1%;
+    background:#ececec;
+}
+
+#homeLinks h2, .tweets h2, #jobs h2{
+   font-size:1.3em;
+   padding:6px 0 8px 12px;
+   color:white;
+   background:#5A9AB0;
+}
+#homeLinks ul {
+    padding:0 4% 4% 4%;
+/*    -webkit-column-count: 2;  Chrome, Safari, Opera 
+    -moz-column-count: 2;  Firefox 
+    column-count: 2;      */
+}
+#jobs p {
+    padding:0 2% 4% 2%;
+}
+.tweets {
+    padding:0 0 0 2%;;
+    width:35%; 
+    float:left;
+}
+
+/*---------------------------------------- homepage boxes ---------------------------------------------------*/
+
+.box{
+    position: relative;
+    width: 23%;	
+    margin:0 .75% 1.5%;
+    color:silver;
+    float:left;    
+    background:#ececec;
+    -webkit-transition: all .3s ease; -moz-transition: all .3s ease; transition: all .3s ease;
+}
+
+.box:before{
+    content: "";
+    display: block;
+    padding-top: 100%; 
+}
+
+.content{
+    /* this is within the box--*/
+    position:  absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.boxText {
+    position:absolute;
+    width:80%;
+    left:10%;
+    top:75%;
+}
+
+
+.boxText h2 {
+    font-size:1.3em;
+    margin:0;
+    line-height:1.3;
+    text-align:center;
+    color:black;
+}
+#grid {
+    margin: 0 auto;
+    list-style: none;
+    text-align: center;
+}
+.box.lander {
+    background:#aec8d2;
+    width:18.5%;
+    display: inline-block;
+    position: relative;
+    float:none;
+}
+.box.lander .boxText {
+    top:10%;
+}
+.box.lander .boxText h2 {
+}
+
+.boxChildren {
+    width:23%;
+    float:left;
+}
+
+.box.lander .boxText h2 {
+    color:#00708A
+}
+.box.lander:hover {
+    background-color:#c3d7de;
+}
+
+/*------------------------ homepage box icons--------------------------*/
+.box img.icon{*height: 0;}
+
+.box img.icon  {
+    text-decoration:none;
+    display: block;
+    width: 80%;
+    height: auto; 
+    margin: -20px 0 0; 
+    position: absolute; 
+    top: 20%;
+    opacity:1;
+    z-index: 10;
+    overflow: hidden;
+    /*opacity: 0; */
+    -webkit-transition: all .3s ease; -moz-transition: all .3s ease; transition: all .3s ease;
+    left: 10%;
+}
+
+.box:hover {cursor:pointer;}
+
+.box:hover {background-color:#F4F3F0;}
+
+
+/*----------------------------------------------Sub navigation--------------------------------------------*/
+#subNav, #onlineNav {
+    border:3px solid #939598;
+    width:88%;
+    padding:5%;
+    margin-bottom:5%;
+}
+#subNav.sidrNav {
+    border:0;
+}
+#subNav.contact {
+    border:0;
+    width:90%;
+    padding-bottom:2%;
+    background:#009bde;
+}
+#subNav.contact a {
+    color:white;
+    font-weight:600;
+    font-size:1.2em;
+}
+#subNav.contact ul li {
+    background: url(../images/right_arrow_white.png) no-repeat 0 10%;
+}
+#subNav.contact:hover {
+    opacity:0.7;
+}
+#subNav h3 {
+    margin-top:0;
+}
+.nav ul li ul li.current {background:silver}
+
+.nav ul li ul li a:hover, #simpleNav ul li a:hover, a.galleryTop:hover {
+    color:silver;
+}
+
+.nav ul li ul li.current a:hover {
+    color:white;
+} 
+.nav ul li {
+    border-bottom:none;
+    margin-bottom:6px;
+    padding:0 0 0 26px;    
+    background: url(../images/right_arrow.png) no-repeat 0 10%;
+}
+#homeLinks.nav ul li {
+    background: url(../images/right_arrow.png) no-repeat 0 10%;
+
+}
+.nav ul li a {
+    font-size:1.1em;
+    text-decoration:none;    
+    color:black;
+    margin:0 ;
+    line-height:1;
+    
+}
+.nav ul li a:hover {
+    color:silver;
+}
+.nav ul li a.current,#subNav ul li a.section  {color:red;}
+/*#simpleNav ul li a.current, a.galleryTop.current {color:red;}*/
+
+#navImage img {
+    width:100%;
+    height:auto;
+    margin-bottom:3%
+}
+
+/*------------------------------- page stuff --------------------------------------*/
+#breadBox {
+    margin:20px 0 5px;
+}
+#standardPage {
+    padding:0 5%;
+    width:90%;
+    margin: 30px 0 ;
+    min-height:250px;
+}
+#landingPageContent {
+    clear:left;
+    padding-top:20px;
+    width:80%;
+    padding-left:10%;
+}
+#landingPageContent ul {
+    list-style-type:disc;
+}
+
+.pageContent {
+    width:70%;
+    float:left;
+}
+.pageContent ul li {
+    list-style-type:disc;
+}
+.rightPanel {
+    width:25%;
+    float:right;
+}
+
+#pagePanel {
+    margin:30px 0;
+}
+
+#landingText {
+    text-align:center;
+    margin-bottom:2em;
+}
+/*-------------------------------councillors---------------------------------------------*/
+#councillorBanner {
+    background:#EFEFEC;
+    width:96%;
+    padding:2%;
+margin-bottom:30px;
+    
+}
+#councillorBannerText {
+    width:60%;
+    float:left;
+}
+#councillorPortrait img {
+    padding:12px;
+    background:white;
+    float:right;
+}
+/*--- community enabling-----*/
+
+table#budgetLines {
+    width:100%;
+    background:#EFEFEC;
+}
+table#budgetLines td, table#budgetLines th {
+    padding:1% 2%;
+    border:5px solid white;
+}
+table#budgetLines th {
+    background:silver;
+    color:white;
+}
+td.budgetOrganisation {
+    width:20%;
+}
+td.budgetProject {
+    width:50%;
+}
+td.budgetAmount {
+    width:10%;
+}
+
+/*----------------------------------footer-------------------------------*/
+
+.footer {
+    background:white;
+    padding:10px 0;
+    height:120px;
+    text-align:center;
+}
+#twinLogos {
+    width:40%;
+    margin:0 auto;
+    height:70px;
+    padding:22px 0 36px 0;
+}
+#twinLogos p {
+    color:#5A9AB0;
+    font-size:0.8em;
+}
+.footer .logoWrap {
+    float:left;
+    width:49%;
+}
+.footer .logoWrap.first {
+    border-right:1px solid #5A9AB0;
+}
+.footer img {
+    width:auto;
+    width:60%;height:auto;
+    padding:0 20px;
+}
+.footer a {
+    color:white;
+}
+.footer a:hover {
+    color:silver;
+}
+.azFooter {
+    height:63px;
+    padding:14px 6px;
+    text-align:center;
+    color:white;
+    background:#5A9AB0;
+    border-bottom:12px solid #00708A;
+}
+.azFooter p {
+    font-size:1.3em;
+    font-weight:600;
+}
+.azFooter span {padding:0 36px 0 0;}
+
+.azFooter a {
+    color:white;
+    padding-right:4px;
+}
+.azFooter a:hover {color:grey;}
+
+
+img.footerLogo {
+    padding:20px 0 0 30px;
+    display:block;
+    float:left;
+    width:10%;
+    height:auto;
+}
+
+.footerCopy {
+    float:left;
+    margin:10px 0 0;
+    padding:5px 30px 0 10px;
+}
+.footerCopy.right {
+    border-right:0;
+    padding-left:30px;
+    border-left:1px solid white;
+    
+}
+
+.footerCopy p, .footerCopy h3 {
+}
+
+.footerCopy h3 {
+    font-size:1.3em;
+    font-weight:600;
+    letter-spacing:0.03em;
+    line-height:1.5;
+    margin:0;
+    padding:0;
+}
+
+/*----------------------sub - footer colophone-------------------------------*/
+
+.colophon.left {
+    float:left;
+    color:white;
+    padding-left:30px;
+    font-size:0.8em;
+}
+.colophon.right {
+    float:right;
+    color:white;
+    padding-right:30px;
+    font-size:0.8em;
+}
+#colophonFooter {
+    background:#00708A;    
+    padding:10px 0;
+    margin-top:12px;
+    height:20px;
+}
+/*------------------------------------- widgets and stuff -------------------------------*/
+#twitter-widget-0 { 
+      width: 100% !important; 
+}
+
+.widget {
+margin-top:16px;
+    
+}
+.widget h3 {
+    font-size:2em;
+    margin-bottom:10px;
+}
+@media screen and (max-width: 860px) {
+   /* at this point we use the mobile design */
+}
+
+/*--------------------------------------blog ----------------------------------------------*/
+img.left {
+    float:left;
+    padding-right:20px;
+}
+.hfeed img {
+    float:right;
+    width:34%;
+    padding-left:3%;
+    height:auto;
+}
+.hfeed h1, .hfeed h2 {
+    margin:0 0 8px;;
+}
+.hfeed h1 a, .hfeed h2 a {
+    color:black;
+}
+.hfeed h1 {
+    font-size:1.8em;
+    font-weight:700;
+}
+.hfeed h2 {
+    font-size:1.2em;
+    font-weight:700;
+}
+.hfeed h1 a:hover, .hfeed h2 a:hover {
+    color:silver;
+}
+ol, ul {list-style-type:none}
+
+p.authorDate {color:silver;}
+
+.hentry.bigBoy {
+    padding-bottom:20px;
+    margin-bottom:20px;
+    border-bottom:1px solid silver;
+}
+
+.hentry.twin {
+    width:48%;
+    float:left;
+    margin-right:4%;
+}
+.hentry.twin img {
+    width:50%;
+}
+.hentry.twin.odd {
+    margin-right:0;
+}
+.twinDivider {
+    clear:left;
+    height:20px;
+    margin-bottom:20px;
+    border-bottom:1px solid silver;
+}
+
+.hentry.twin p.readMore img, p.readMore img {
+    height:28px;
+    width:auto;
+    float:left;
+    padding-left:4px;
+}
+p.readMore img.first {
+    padding-left:0;
+}
+p.readMore img:hover {
+    opacity:0.8;
+}
+
+/*-----------------------------------forms------------------------------------*/
+input[type="text"],textarea {
+    width:50%;
+    background:#f6f6f6;
+}
+
+/* For devices larger than 400px  consider this the phone */
+@media (max-width: 1460px) {
+        .container {width:100%;}
+}
+
+@media (max-width: 1024px) {
+        .tweets {display:none;}
+        .tablet {display:block;}
+        .linksJobs {width:98%;}
+        .azFooter p {font-size:1.2em;}
+        .azFooter a {padding-right:2px;}
+        /*collapse margins and go full width now*/
+        #pagePanel {margin:0.3% 0;}
+        .sideBar {margin:0 .4% 0 0%;width:28.5%}
+        .sideBar h2.newsHeader {margin-top:.5%;}
+        #homePanel {float:left;width:71.1%;}
+        .box {margin:0 .54% .5% 0; width:32.914%;}
+        .box.tablet-0 {margin-right:0%;}
+        
+        .box.lander {width:31%;        }
+        #homeLinks h2, .tweets h2, #jobs h2 {margin:0 0 12px 0;}
+        #homeLinks, #jobs {margin:0;}
+        #homeLinks ul {margin-bottom:.5%;}
+        #headerText img {width:100%;}
+        #twinLogos {width:80%;}
+        
+        .pageContent {width:60%;}
+        .rightPanel {width:40%;}
+
+}
+@media (max-width: 800px) {
+    .azFooter p {font-size:1em;}
+    .azFooter a {padding-right:1px;}
+    .boxText h2 {font-size:1.1em;}
+    
+}
+
+
+@media (max-width: 660px) {
+    .mobile {display:block;}
+    a.mobileNav {display:block;position:absolute;left:5%;top:25%;}
+    .container {padding:0;}
+    .headerPanel {height:auto;}
+    
+    #headerText img {width:90%;margin:0 0 0 5%;padding:0;}
+    #headerText {padding:4px 0 0 0;border-bottom:1px solid white;}
+    #headerTools img.strapline, #searchWrapper {width:90%;}
+    #headerText, .sideBar, #homePanel,#headerTools {width:100%;}
+    #features,#news,.tablet,.desktop {display:none;}
+    
+    .box,.box.tablet-0 {width:49.5%;margin:.5% 1% .5% 0;}
+    .box.mobile-0 {margin-right:0%;}
+    .box.lander {width:49.1%;margin:.5% 1% .5% 0;float:left;}
+    .box.lander.mobile-0 {margin-right:0%;}
+    .boxText h2 {font-size:1.4em;}
+
+    .azFooter {display:none;}
+    #twinLogos {width:100%;}
+    img.footerLogo {display:none;}
+    
+    .footerCopy.left {display:none;}
+    .footerCopy.right {border-left:0;}
+    .footerCopy {width:100%;}
+
+    .pageContent,.rightPanel {width:100%;}
+    #breadBox {margin-left:5%;}
+}
+
+.clearFix {
+    content: "";
+    display: table;
+    clear: both; 
+}

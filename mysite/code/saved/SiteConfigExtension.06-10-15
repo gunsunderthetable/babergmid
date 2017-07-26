@@ -1,0 +1,31 @@
+<?php
+
+class SiteConfigExtension extends DataExtension {
+    private static $db = array(
+        'ContactName' => 'Varchar',
+        'ContactEmailAddress' => 'Varchar',
+        'ContactPhoneNumber' => 'Varchar',
+        'FacebookLink' => 'Varchar',
+        'YoutubeLink' => 'Varchar',
+        'TwitterLink' => 'Varchar',
+        'Address' => 'Text',
+        'FooterLinks' => 'Text'
+    );
+    private static $has_one = array(
+        'Favicon' => 'File'
+    );
+
+    public function updateCMSFields(FieldList $fields)  {  
+            $fields->addFieldToTab('Root.Organisation', new TextField('ContactName', 'Name of Contact'));
+            $fields->addFieldToTab('Root.Organisation', new TextField('ContactName', 'Name of Contact'));
+            $fields->addFieldToTab('Root.Organisation', new EmailField('ContactEmailAddress', 'Email Address'));
+            $fields->addFieldToTab('Root.Organisation', new TextField('ContactPhoneNumber', 'Phone number'));
+            $fields->addFieldToTab('Root.Organisation', new TextField('Address', 'Address'));
+            $fields->addFieldToTab('Root.Organisation', new FileField('Favicon', 'Favicon'));
+            $fields->addFieldToTab('Root.SocialLinks', new TextField('FacebookLink', 'Facebook link - use http://'));
+            $fields->addFieldToTab('Root.SocialLinks', new TextField('TwitterLink', 'Twitter link - use http://'));
+            $fields->addFieldToTab('Root.SocialLinks', new TextField('YoutubeLink', 'Youtube link - use http://'));
+            $fields->addFieldToTab('Root.Footer', new TextareaField('FooterLinks', 'Footer links - one link per line. The format is: Page or external web address&lt;space&gt;Text to use as the link<br>For example - /about-us About our company <br>or http://www.google.co.uk Google'));
+    }      
+
+}

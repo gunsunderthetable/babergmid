@@ -1,0 +1,42 @@
+<?php
+class Page extends SiteTree {
+
+	private static $db = array(
+	);
+        
+	private static $has_one = array(
+            "MyWidgetArea" => "WidgetArea",
+            'MainImage' => 'Image'
+        );
+        
+        public function getCMSFields() {
+            $fields = parent::getCMSFields();
+            $fields->addFieldToTab("Root.Widgets", new WidgetAreaEditor("MyWidgetArea"));
+            $fields->addFieldToTab('Root.Main', UploadField::create("MainImage", "Main page image"), "Content");    
+            return $fields;
+        }
+        
+        function getTopLevelPage() {
+            return $this->Level(1)->ClassName;
+        }
+     
+        
+  
+        
+}
+class Page_Controller extends ContentController {
+
+	private static $allowed_actions = array (
+	);
+
+	public function init() {
+		parent::init();
+                Requirements::javascript('mysite/javascript/jquery-1.9.1.js');
+                Requirements::javascript('mysite/javascript/clearField.js');
+                Requirements::javascript("mysite/javascript/site.accordion.js");
+                Requirements::javascript("mysite/javascript/hoverintent.minified.js");
+                Requirements::javascript('source/javascript/jquery.sidr.min.js');                
+                Requirements::javascript('mysite/javascript/site.js');
+	}
+
+}

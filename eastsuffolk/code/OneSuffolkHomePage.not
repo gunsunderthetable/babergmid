@@ -1,0 +1,73 @@
+<?php
+
+	class OneSuffolkHomePage extends Page{
+		
+		static $db = array(
+			"NumberNewsItems" => "Int",
+			"NumberEventItems" => "Int"
+		);
+		
+		static $has_many = array(
+			"OneSuffolkSlides" => "OneSuffolkSlide"
+		);
+		
+		static $defaults = array(
+			"NumberNewsItems" => 4,
+			"NumberEventItems" => 4
+		);
+			
+		static $icon = "mysite/images/homepage";
+		
+		function getCMSFields(){
+		
+			$fields = parent::getCMSFields();
+						
+			$slidesField = new DataObjectManager(
+				$this,
+				'OneSuffolkSlides',
+				'OneSuffolkSlide',
+				array(
+					'RealTitle' => 'Title',
+					'RealDescription' => 'Description',
+					'RealLink' => 'Link',
+					'ImageName' => 'Image',
+					'PageID' => 'Page'					
+				),
+				'getCMSFields_forPopup'
+			);
+			
+			$slidesField->setPageSize(20);
+			$fields->addFieldToTab('Root.Content.SlideShow', $slidesField);
+			
+			$fields->addFieldToTab('Root.Content.NewsAndEvents', new NumericField('NumberNewsItems', 'Number of news items'));
+			$fields->addFieldToTab('Root.Content.NewsAndEvents', new NumericField('NumberEventItems', 'Number of event items'));
+			
+			return $fields;
+		}
+		
+		function getNewsItems(){
+			return DataObject::get('BlogArticle', '', 'Date DESC', '', $this->NumberNewsItems ? $this->NumberNewsItems : 4);
+		}
+		
+		function getEventItems(){
+			return DataObject::get('EventPage', 'EndDate >= CURDATE()', 'EndDate ASC', '', $this->NumberEventItems ? $this->NumberEventItems : 4);	
+		}
+		
+		function getNewsHolder()
+		{
+			return DataObject::get_one('MyBlogHolder');
+		}
+		
+	}
+	
+	class OneSuffolkHomePage_Controller extends Page_Controller{
+		
+		function init()
+		{		
+			parent::init();
+			Requirements::javascript('mysite/javascript/noConflict.js');
+			Requirements::javascript('onesuffolk/javascript/jquery.cycle.min.js');
+			Requirements::javascript('onesuffolk/javascript/slideshow.js');
+		}
+		
+	}

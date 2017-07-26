@@ -1,0 +1,49 @@
+
+
+/*----------------------------new Open obj A to Z-------------------------------------*/
+
+#azResults {
+    width:90%;
+    margin-top:20px;
+    clear:left;
+}
+
+#azResults h2 {
+    margin:0;
+    padding:8px 0 16px;
+    font-weight:900;
+}
+
+#azResults p {
+    padding-bottom:10px;
+}
+
+#azResults ul {
+    border-bottom:2px solid #939598;
+    padding-bottom:12px;
+    margin-left:0;
+}
+#azResults ul:last-child {
+    border-bottom:0;
+
+}
+#azResults ul li {
+    list-style:none;
+    margin-bottom:10px;
+}
+
+
+#azLetters {
+    margin-bottom:30px;
+}
+
+#azLetters a {
+    font-size: 1.4em;
+    padding: 4px 12px;
+    background: black;
+    font-weight: bold;
+    border-right: 3px solid white;
+    border-bottom: 3px solid white;
+    color: white;
+    float: left;
+    text-decoration: none;

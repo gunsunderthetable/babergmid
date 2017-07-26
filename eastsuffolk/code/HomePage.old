@@ -1,0 +1,100 @@
+<?php
+class HomePage extends Page {
+
+            public static $has_many = array(
+                "Boxes" => "Box",
+                "Links" => "Link"
+            );  
+
+            public function getCMSFields() {
+              $fields = parent::getCMSFields();
+
+              $gridFieldBoxConfig = GridFieldConfig::create()->addComponents(
+                new GridFieldSortableRows('SortOrder'),                         
+                new GridFieldToolbarHeader(),
+                new GridFieldAddNewButton('toolbar-header-right'),
+                new GridFieldSortableHeader(),
+                new GridFieldDataColumns(),
+                new GridFieldPaginator(10),
+                new GridFieldEditButton(),
+                new GridFieldDeleteAction(),
+                new GridFieldDetailForm()
+              );
+
+              $gridField = new GridField("Boxes", "Boxes for homepage:", $this->Boxes(), $gridFieldBoxConfig);
+              $fields->addFieldToTab("Root.Boxes", $gridField);
+
+              $gridFieldBoxConfig = GridFieldConfig::create()->addComponents(
+                new GridFieldSortableRows('SortOrder'),                         
+                new GridFieldToolbarHeader(),
+                new GridFieldAddNewButton('toolbar-header-right'),
+                new GridFieldSortableHeader(),
+                new GridFieldDataColumns(),
+                new GridFieldPaginator(10),
+                new GridFieldEditButton(),
+                new GridFieldDeleteAction(),
+                new GridFieldDetailForm()
+              );
+
+              $gridField = new GridField("Links", "Quick Links:", $this->Links(), $gridFieldBoxConfig);
+              $fields->addFieldToTab("Root.QuickLinks", $gridField);                  
+              return $fields;
+            }  
+
+            public function getFeatures($num=2) {
+                 $holder = FeatureHolder::get()->First();
+                 return ($holder) ? FeaturePage::get()->filter('ParentID', $holder->ID)->limit($num) : false;
+            }
+            
+            public function getFeatureHolder() {
+                 $holder = FeatureHolder::get()->First();
+                 return $holder;
+            }
+            
+            public function getNews($num=3) {
+                 $holder = BlogHolder::get()->First();
+                 return ($holder) ? BlogEntry::get()->filter('ParentID', $holder->ID)->limit($num) : false;
+            }
+            public function getNewsHolder() {
+                 $holder = BlogHolder::get()->First();
+                 return $holder;
+            }            
+            
+            public function getJobsForHomePage() {
+                
+                try {
+                    $fetch = new RestfulService(
+                        'http://www.suffolkjobsdirect.org/rsssearch'                        
+                    );
+
+                    $fetch->setQueryString(array(
+                        'dep' => '1173'
+                    ));
+
+                    /// perform the query
+                    $conn = $fetch->request();
+
+                    //$msgs = $fetch->getValues($conn->getBody(), "channel");
+                    $msgs = $fetch->getValues($conn->getBody(), "channel","item");
+
+                    $output = new ArrayList();
+
+                    if($msgs) {
+                        foreach($msgs as $msg) {
+                            $output->push(new ArrayData(array(
+                                'Title' => Convert::xml2raw($msg->title),
+                                'Link' => Convert::xml2raw($msg->link),
+                                'Description' => Convert::xml2raw($msg->description)
+                            )));
+                        }
+                    } 
+                    return $output;  
+                } catch (Exception $e) {
+                    $e->getMessage();
+                }
+            }
+}
+
+class HomePage_Controller extends Page_Controller {
+	
+}

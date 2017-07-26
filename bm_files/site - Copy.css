@@ -1,0 +1,764 @@
+/*  Created on : July-2015 | Author : Adrian Lynch */ 
+#sidr, .mobile, .tablet, a.mobileNav {display:none;}
+
+h1,h2,h3,h4,h5 {
+    font-family:"open-sans", arial, sans-serif;
+    font-weight:900;
+}
+
+p {
+    font-size:1.1em;
+    line-height:1.5;
+}
+
+a {color:#0767B2}
+a:hover {color:silver;}
+
+/*---------------------------header----------------------------------*/
+.headerPanel {
+    background-color:#6699cc;
+    height:200px;
+    position:relative;
+    color:white;
+    position:relative;
+}
+
+#headerText {
+    width:35%;
+    float:left;
+    padding:0 0 0 2%;
+}
+#headerText img {
+    width:80%;
+    height:auto;
+    padding:10px 0 0 27px;
+}
+
+#headerTools {
+    width:55%;
+    height:200px;
+    float:right;
+    position:relative
+}
+
+#headerTools p {
+    text-align:right;
+    padding:10px 5% 0 0;
+}
+#headerTools img.strapline {
+    width:85%;
+    float:right;
+    height:auto;
+    display:block;
+    padding:20px 5% 0 0;
+}
+
+#headerTools p a {
+    color:white;
+    font-size: 0.8em;
+    line-height: 0.8;
+}
+
+#headerTools p a:hover {
+    color:silver;
+}
+
+#headerTools p.searchText {
+    /*padding-top:50px;*/
+    clear:right;
+    font-size:1.35em;
+    font-family:"open-sans", arial, sans-serif;
+}
+#socialButtons {
+    float:right;
+    padding-right:5%;
+    height:40px;
+}
+#socialButtons img:hover {
+    opacity:0.6;
+}
+/*-------------------------------------- search ------------------------------------------*/
+#searchWrapper {
+    height:40px;
+    width:85%;
+    padding:10px 5% 0 0;
+    float:right;
+}
+
+#mobileSearchWrapper {
+    position:relative;
+    z-index:11;
+    display:none;
+}
+
+form#SearchForm_SearchForm {
+    width:100%;
+    margin:0 auto;
+    height:39px;
+    background:white url(../images/search_bg.png) no-repeat top right;
+    position:relative;
+    padding:0;
+}
+
+form#SearchForm_SearchForm .middleColumn {
+    width:70%;
+    float:left;
+    height:20px;
+}
+
+form#SearchForm_SearchForm input[type="text"] {
+    background:transparent;
+    color:black;
+    position:absolute;
+    top:0;
+    left:0;
+    border:0;
+    width:100%;
+}
+form#SearchForm_SearchForm input[type="submit"] {
+    position:absolute;
+    right:0;
+    top:6px;
+    width:45px;
+    color:transparent;
+    padding-right:0px;
+    text-shadow:none;
+    background:transparent;
+    border:0;
+}
+
+/*---------------------------main homepage panel-----------------------*/
+.HomePage #pagePanel {
+    /*    the wrapper for the boxes*/
+    width:94%;
+    padding:0 3%;
+    /*overflow:hidden;*/
+    margin-bottom:2%;
+}
+
+/*---------------------------------------- homepage boxes ---------------------------------------------------*/
+
+.box{
+    position: relative;
+    width: 31.2%;	
+    margin:0 1% 2%;
+    color:silver;
+    float:left;    
+    background:#6699cc;
+    -webkit-transition: all .3s ease; -moz-transition: all .3s ease; transition: all .3s ease;
+    border-radius:24px;
+}
+
+.box:before{
+    content: "";
+    display: block;
+    padding-top: 60%; 
+}
+
+.content{
+    /* this is within the box--*/
+    position:  absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.boxText {
+    position:absolute;
+    width:80%;
+    left:10%;
+    top:75%;
+}
+
+
+.boxText h2 {
+    font-size:1.5em;
+    margin:0;
+    line-height:1.3;
+    text-align:center;
+    color:white;
+}
+.box.lander .boxText {
+    top:16%;
+}
+
+#landingPageBreak {
+    clear:left;
+    width:100%;
+    height:2px;
+    border-bottom:1px solid silver;
+    margin-bottom:20px;
+}
+
+#landingChildren {
+    clear:left;
+    width:80%;
+    padding:30px 0 0 10%;
+}
+#landingChildren h2 {
+    margin-bottom:20px;
+}
+#landingChildren ul {
+    width:48%;
+    float:left;
+}
+#landingChildren ul.column-1 {
+    padding-right:4%;
+}
+#landingChildren ul li {
+        background: url(../images/bullet.png) no-repeat top left;
+        padding-left:40px;
+        margin-bottom:20px;
+}
+#landingChildren ul li a {
+    font-size:1.6em;
+    font-weight:bold;
+    line-height:1;
+}
+
+
+/*------------------------ homepage box icons--------------------------*/
+.box img.icon{*height: 0;}
+
+.box img.icon  {
+    text-decoration:none;
+    display: block;
+    width: 36%;
+    height: auto; 
+    margin: -20px 0 0; 
+    position: absolute; 
+    top: 20%;
+    opacity:1;
+    z-index: 10;
+    overflow: hidden;
+    /*opacity: 0; */
+    -webkit-transition: all .3s ease; -moz-transition: all .3s ease; transition: all .3s ease;
+    left: 32%;
+}
+
+.box:hover {cursor:pointer;}
+
+.box:hover {box-shadow:0 0 0 3pt #aaa;}
+/*----------------------------------------home page news panel--------------------------------*/
+
+#news {
+    width:31.2%;
+    float:left;
+    margin:0 1%;
+}
+#features {
+    width:31%;
+    float:left;
+    margin:0 1%;
+}
+#homePageWidgets {
+    width:31.2%;
+    margin:0 1%;
+    float:left;    
+}
+#homePageWidgets h3 {
+    font-size: 3.8rem;
+    line-height: 1.2;
+    letter-spacing: -.1rem;
+    margin-top: 0;    
+}
+#homePageWidgets .widget {margin-top:0;}
+
+#news h2, #features h2 {
+    font-size:2em;
+}
+/*----------------------------------------------Sub navigation--------------------------------------------*/
+#subNav, #onlineNav {
+    border:3px solid #939598;
+    width:88%;
+    padding:5%;
+    margin-bottom:5%;
+}
+#subNav.sidrNav {
+    border:0;
+}
+#subNav.contact {
+    border:0;
+    width:90%;
+    padding-bottom:2%;
+    background:#6699cc;
+}
+#subNav.contact a {
+    color:white;
+    font-weight:600;
+    font-size:1.2em;
+}
+#subNav.contact ul li {
+    background: url(../images/right_arrow_white.png) no-repeat 0 10%;
+}
+#subNav.contact:hover {
+    opacity:0.7;
+}
+#subNav h3 {
+    margin-top:0;
+}
+.nav ul li ul li.current {background:silver}
+
+.nav ul li ul li a:hover, #simpleNav ul li a:hover, a.galleryTop:hover {
+    color:silver;
+}
+
+.nav ul li ul li.current a:hover {
+    color:white;
+} 
+.nav ul li {
+    border-bottom:none;
+    margin-bottom:6px;
+    padding:0 0 0 26px;    
+    background: url(../images/right_arrow.png) no-repeat 0 10%;
+}
+#homeLinks.nav ul li {
+    background: url(../images/right_arrow.png) no-repeat 0 10%;
+
+}
+.nav ul li a {
+    font-size:1.1em;
+    text-decoration:none;    
+    color:black;
+    margin:0 ;
+    line-height:1;
+    
+}
+.nav ul li a:hover {
+    color:silver;
+}
+.nav ul li a.current,#subNav ul li a.section  {color:red;}
+/*#simpleNav ul li a.current, a.galleryTop.current {color:red;}*/
+
+#navImage img {
+    width:100%;
+    height:auto;
+    margin-bottom:3%
+}
+
+/*------------------------------- page stuff --------------------------------------*/
+#breadBox {
+    margin:20px 0 5px;
+}
+#standardPage {
+    padding:0 5%;
+    width:90%;
+    margin: 30px 0 ;
+    min-height:250px;
+}
+#landingPageContent {
+    clear:left;
+    padding:10px 0 30px;
+    width:98%;
+    padding-left:1%;
+}
+#landingPageContent ul {
+    list-style-type:disc;
+}
+#landingPageContent ol,.pageContent ol {
+    list-style-type:decimal;
+}
+.pageContent {
+    width:70%;
+    float:left;
+}
+.pageContent ul {
+    margin-left:40px;
+}
+.assetLister ul {
+    margin:30px 0;
+}
+
+.pageContent ul li {
+    list-style-type:disc;
+    list-style-position:outside;
+}
+.pageContent table ul li {
+    margin-left:22px;
+}
+
+.pageContent img {
+    max-width:45%;
+    height:auto;
+    padding-top:5px;
+}
+.pageContent table img {
+    max-width:100%;
+    height:auto;    
+}
+.rightPanel {
+    width:25%;
+    float:right;
+}
+
+#pagePanel {
+    margin:30px 0;
+}
+
+#landingText {
+    text-align:center;
+    margin-bottom:2em;
+}
+/*-------------------------------councillors---------------------------------------------*/
+#councillorBanner {
+    background:#EFEFEC;
+    width:96%;
+    padding:2%;
+margin-bottom:30px;
+    
+}
+#councillorBannerText {
+    width:60%;
+    float:left;
+}
+#councillorPortrait img {
+    padding:12px;
+    background:white;
+    float:right;
+}
+ul#councillorResults li {
+    list-style-type:none;
+    padding-bottom:12px;
+    border-bottom:1px solid silver;
+}
+ul#councillorResults li.last {
+    border-bottom:0;
+}
+ul#councillorResults li a {
+    font-weight:bold;
+    font-size:1.4em;
+}
+
+ul#councillorResults li span:before {
+    content:", "
+}
+ul#councillorResults li span.first:before {
+    content:""
+}
+#memberSearch select{
+    width:260px;
+}
+#memberSearch fieldset {
+    margin-top:25px;
+}
+#memberSearch label {
+    float:left;
+    font-size:1.1em;
+    padding-top:5px;
+    width:100px;
+}
+#memberSearch input[type="text"] {
+    width:260px;
+}
+#memberSearch input[type="submit"] {
+    background:#599aac;
+    color:white;
+    font-size:1.2em;
+    border:2px solid #6699cc;
+    height:50px;
+    margin-top:20px;
+    margin-left:215px;
+}
+/*--- community enabling-----*/
+
+table#budgetLines {
+    width:100%;
+    background:#EFEFEC;
+}
+table#budgetLines td, table#budgetLines th {
+    padding:1% 2%;
+    border:5px solid white;
+}
+table#budgetLines th {
+    background:silver;
+    color:white;
+}
+td.budgetOrganisation {
+    width:20%;
+}
+td.budgetProject {
+    width:50%;
+}
+td.budgetAmount {
+    width:10%;
+}
+
+
+/* Pagination
+ * ------------------------------------- */
+
+.pagination ul {
+    list-style-type:none;
+    padding:30px 0 0 0;
+}
+
+.pageContent .pagination li{
+    float:left;
+    line-height:1;
+    list-style-type:none;
+        
+}
+
+.pagination a, .pagination .noLink{
+	float:left;
+	display:block;
+	border-right:1px solid #c1c1c1;
+	padding:0 8px;
+        font-weight:bold;
+        font-size:1.2em;
+}
+
+.pagination a.last
+{
+	border-right:none;
+}
+.pagination a.disabled {
+    color:silver;
+}
+.pagination .prev a,
+.pagination .next a{
+	border:none;
+	padding:0;
+}
+
+.pagination .prev a{
+	padding-right:16px;
+}
+
+.pagination .next a{
+	padding-left:16px;
+}
+/*----------------------------------footer-------------------------------*/
+
+.footer {
+    background:white;
+    padding:0;
+    height:auto;
+    text-align:center;
+    margin-top:30px;
+}
+
+.footer a {
+    color:white;
+}
+.footer a:hover {
+    color:silver;
+}
+.azFooter {
+    height:63px;
+    padding:14px 6px;
+    text-align:center;
+    color:white;
+    background:black;
+    border-bottom:12px solid #6699cc;
+}
+.azFooter p {
+    font-size:1.3em;
+    font-weight:600;
+}
+.azFooter span {padding:0 36px 0 0;}
+
+.azFooter a {
+    color:white;
+    padding-right:4px;
+}
+.azFooter a:hover {color:grey;}
+
+
+.footerCopy {
+    float:left;
+    margin:10px 0 0;
+    padding:5px 30px 0 10px;
+}
+.footerCopy.right {
+    border-right:0;
+    padding-left:30px;
+    border-left:1px solid white;
+}
+
+.footerCopy p, .footerCopy h3 {
+}
+
+.footerCopy h3 {
+    font-size:1.3em;
+    font-weight:600;
+    letter-spacing:0.03em;
+    line-height:1.5;
+    margin:0;
+    padding:0;
+}
+#translateWrap {
+    background:#6699cc;
+    clear:left;
+    width:97.7%;
+    margin:0 auto;
+    height:26px;
+    padding:6px 0 16px 2.3%;
+    margin-bottom:30px;
+}
+
+/*----------------------sub - footer colophone-------------------------------*/
+
+.colophon.left {
+    float:left;
+    color:white;
+    padding-left:30px;
+    font-size:0.8em;
+}
+.colophon.right {
+    float:right;
+    color:white;
+    padding-right:30px;
+    font-size:0.8em;
+}
+#colophonFooter {
+    background:#6699cc;    
+    padding:10px 0;
+    margin-top:12px;
+    height:20px;
+}
+/*------------------------------------- widgets and stuff -------------------------------*/
+#twitter-widget-0 { 
+      width: 100% !important; 
+}
+
+.widget {
+margin-top:16px;
+    
+}
+.widget h3 {
+    font-size:2em;
+    margin-bottom:10px;
+}
+@media screen and (max-width: 860px) {
+   /* at this point we use the mobile design */
+}
+
+/*--------------------------------------blog ----------------------------------------------*/
+img.left {
+    float:left;
+    padding-right:20px;
+}
+.hfeed img {
+    float:right;
+    width:34%;
+    padding-left:3%;
+    height:auto;
+}
+.hfeed h1, .hfeed h2 {
+    margin:0 0 8px;;
+}
+.hfeed h1 a, .hfeed h2 a {
+    color:black;
+}
+.hfeed h1 {
+    font-size:1.8em;
+    font-weight:700;
+}
+.hfeed h2 {
+    font-size:1.2em;
+    font-weight:700;
+}
+.hfeed h1 a:hover, .hfeed h2 a:hover {
+    color:silver;
+}
+ol, ul {list-style-type:none}
+
+p.authorDate {color:silver;}
+
+p.readMore img.first {
+    padding-left:0;
+}
+p.readMore img:hover {
+    opacity:0.8;
+}
+
+/*-----------------------------------forms------------------------------------*/
+input[type="text"],textarea {
+    width:50%;
+    background:#f6f6f6;
+}
+/*----------------------------------- media queries ------------------------------------*/
+
+@media (max-width: 1460px) {
+    .container {width:100%;}
+}
+
+@media (max-width: 1024px) {
+    .tweets {display:none;}
+    .tablet {display:block;}
+    .linksJobs {width:98%;}
+    .azFooter p {font-size:1.2em;}
+    .azFooter a {padding-right:2px;}
+    /*collapse margins and go full width now*/
+    #pagePanel {margin:0.3% 0;}
+    .sideBar {margin:0 .4% 0 0%;width:28.5%}
+    .sideBar h2.newsHeader {margin-top:.5%;}
+    #homePanel {float:left;width:71.1%;}
+    .box {margin:12px 1% 2px; width:31%;}
+
+    .box.lander {width:31%;        }
+    #homeLinks h2, .tweets h2, #jobs h2 {margin:0 0 12px 0;}
+    #homeLinks, #jobs {margin:0;}
+    #homeLinks ul {margin-bottom:.5%;}
+    #headerText img {width:100%;}
+    #twinLogos {width:80%;}
+
+    .pageContent {width:60%;}
+    .rightPanel {width:35%;margin-left:5%;}
+    .linksJobs {width:100%;}
+    #landingChildren ul {width:100%;}
+    #landingChildren {width:100%;padding-left:0;}
+    #news h2, #features h2 {font-size:1.6em;}    
+    #news h1, #features h1, #homePageWidgets h1 {font-size:2em;}    
+    #landingPageBreak {padding-top:22px;}
+    
+
+
+}
+@media (max-width: 800px) {
+    .azFooter p {font-size:1em;}
+    .azFooter a {padding-right:1px;}
+    .boxText h2 {font-size:1em;}
+    #colophonFooter {width:100%;text-align:center;overflow:hidden;height:auto;}
+    .colophon.left, .colophon.right {width:70%;margin-left:15%;padding:0;text-align:center;float:none;}
+    #translateWrap {text-align:center;}
+    #news, #features, #homePageWidgets {width:100%;}
+    #news, #homePageWidgets {padding-top:10px;margin-top:20px;border-top:1px solid silver;}
+}
+
+@media (max-width: 660px) {
+    .mobile {display:block;}
+    .pageContent img {display:none;}
+    a.mobileNav {display:block;position:absolute;left:5%;top:15%;}
+    .container {padding:0;width:100%;overflow:hidden;}
+    .headerPanel {height:auto;}
+    
+    #headerText img {width:60%;margin:0 0 0 20%;padding:0;}
+    #headerText {padding:4px 0 0 0;border-bottom:1px solid white;}
+    #headerTools img.strapline, #searchWrapper {width:90%;}
+    #headerText, .sideBar, #homePanel,#headerTools {width:100%;}
+    .tablet,.desktop {display:none;}
+    
+    .box, .box-lander {width:97%;margin:12px 1.5% 4px ;}
+    .boxText h2 {font-size:3em;}
+
+    .azFooter {display:none;}
+    
+    .pageContent,.rightPanel {width:100%;}
+    #subNav.contact {display:block;text-align:center;margin-top:10px;width:60%;margin-left:16%;border-radius:12px;}
+    #subNav.contact li {padding:0;}
+    #subNav.contact a {font-size:1.8em;}
+    #breadBox {margin-left:5%;}
+}
+
+.clearFix {
+    content: "";
+    display: table;
+    clear: both; 
+}
+.clearShort {
+    content: "";
+    clear: both;   
+}
