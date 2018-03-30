@@ -1,7 +1,20 @@
 <div class="row">
     <div id="pagePanel">
         <div class="row">
-            <% loop $Boxes %>
+            <% if TopTaskBoxes %>
+            <% loop $TopTaskBoxes %>
+                <div class="box $EvenOdd mobile-$Modulus(2) tablet-$Modulus(3)" onclick="<% if $ExternalLink %>window.open('$ExternalLink')<% else %>location.href='$LinkPage.Link';<% end_if %>">
+                    <% with $Icon %>
+                        <img class="icon" src="$CroppedImage(350,350).URL" alt="$Title" />
+                    <% end_with %>
+                    <div class="boxText">
+                        <h2>$Title</h2>
+                    </div>
+                </div>
+            <% end_loop %>
+            <div id="landingPageBreak"></div>           
+            <% end_if %>
+            <% loop $TheOtherBoxes %>
                 <div class="box $EvenOdd mobile-$Modulus(2) tablet-$Modulus(3)" onclick="<% if $ExternalLink %>window.open('$ExternalLink')<% else %>location.href='$LinkPage.Link';<% end_if %>">
                     <% with $Icon %>
                         <img class="icon" src="$CroppedImage(350,350).URL" alt="$Title" />

@@ -1,0 +1,39 @@
+/* 
+    Document   : color
+    Created on : 25-Sep-2015, 10:30:21
+    Author     : User
+    Description: allow easy updating of eastsuffolk sites by having a separate site-specific stylesheet
+*/
+
+
+.sideBar h2 {
+   background:#009BDE;
+}
+.sideBar .feature {
+    background:#E5E4E0 url(../images/right_arrow_blank.png) no-repeat center right;
+    background-position:94% 10%;
+
+}
+#homeLinks {
+    background:#E5E4E0;
+}
+
+#homeLinks h2, .tweets h2 {
+   background:#6A1B32;
+}
+.footer {
+    background:#949489;
+}
+
+.azFooter {
+    background:#6A1B32;
+}
+#colophonFooter {
+    background:#949489;    
+}
+#subNav.contact {
+    background:#009bde;
+}
+.box.lander {
+    background:#bfdaf3;
+}

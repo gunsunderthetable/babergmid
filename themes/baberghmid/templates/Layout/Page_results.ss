@@ -37,23 +37,25 @@
                 <% end_if %>
 
                 <% if $Results.MoreThanOnePage %>
-                <div id="PageNumbers" class="searchResults">
+                <div id="PageNumbers">
                     <div class="pagination">
                         <% if $Results.NotFirstPage %>
                         <a class="prev" href="$Results.PrevLink" title="View the previous page">&larr;</a>
                         <% end_if %>
-                        <% loop $Results.Pages %>
-                            <% if $CurrentBool %>
-                            <span class="noLink">$PageNum</span>
-                            <% else %>
-                            <a href="$Link" title="View page number $PageNum" class="go-to-page">$PageNum</a>
-                            <% end_if %>
-                        <% end_loop %>
+                        <span>
+                            <% loop $Results.Pages %>
+                                <% if $CurrentBool %>
+                                $PageNum
+                                <% else %>
+                                <a href="$Link" title="View page number $PageNum" class="go-to-page">$PageNum</a>
+                                <% end_if %>
+                            <% end_loop %>
+                        </span>
                         <% if $Results.NotLastPage %>
                         <a class="next" href="$Results.NextLink" title="View the next page">&rarr;</a>
                         <% end_if %>
                     </div>
-                    <p class="pageCount">Page $Results.CurrentPage of $Results.TotalPages</p>
+                    <p>Page $Results.CurrentPage of $Results.TotalPages</p>
                 </div>
                 <% end_if %>                
                 </div>

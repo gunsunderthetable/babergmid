@@ -16,25 +16,10 @@
                 <% if $SiteConfig.FacebookLink %><a href="$SiteConfig.FacebookLink" target="_blank" alt="facebook"><img src ="$ThemeDir/images/facebook.png" /></a><% end_if %>
                 <% if $SiteConfig.YouTubeLink %><a href="$SiteConfig.YouTubeLink" target="_blank" alt="facebook"><img src ="$ThemeDir/images/youtube.png" /></a><% end_if %>
                 <% if $SiteConfig.StreetLifeLink %><a href="$SiteConfig.StreetLifeLink" target="_blank" alt="facebook"><img src ="$ThemeDir/images/streetlife.png" /></a><% end_if %>
-            </div>
-            <% include Search %>
-            <% if $SiteConfig.Boxes %>
-            <div id="actionButtons">
-                <% loop $SiteConfig.Boxes %>
-                    <div class="box headerBox $FirstLast" onclick="location.href='$LinkPage.Link';">
-                        <div class="content">
-                            <% with $Icon %>
-                            <img class="icon" src="$CroppedImage(350,255).URL" alt="$Title" />
-                            <% end_with %>
-                            <div class="boxText">
-                                <h2>$Title</h2>
-                            </div>             
-                        </div>       
-                    </div>
-                <% end_loop %>
-            </div>
 
-            <% end_if %>
+            </div>
+            <img class="strapline" src="$ThemeDir/images/header_strapline.png" alt="Access local council information quickly and easily" title="Access local council information quickly and easily" />
+            <% include Search %>
         </div>
     </div>      
 </div>

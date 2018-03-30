@@ -11,8 +11,9 @@ class SiteConfigExtension extends DataExtension {
         'LinkedInLink' => 'Text',
         'TwitterLink' => 'Text',
         'FacebookLink' => 'Text',
-        'YouTubeLink' => 'Text'
-        
+        'YouTubeLink' => 'Text',
+        'HTMLHeaderSnippet' => 'HTMLText',
+        'GoogleAnalyticsAccountCode' => 'Text'        
     );
     
     private static $has_one = array(
@@ -24,17 +25,16 @@ class SiteConfigExtension extends DataExtension {
     );
 
 
-    public function updateCMSFields(FieldList $fields)  {  
-        $fields->addFieldToTab('Root.Main', new TextField('TaglineExtra', 'Tag line break'),'Theme');
-        $fields->addFieldToTab('Root.Main', new TextField('SearchText', 'Text to appear above search'),'Theme');
+    public function updateCMSFields(FieldList $fields)  { 
+        $fields->addFieldToTab('Root.Main', new TextField('GoogleAnalyticsAccountCode', 'Google Analytics account code'),'Theme');
         $fields->addFieldToTab('Root.SocialMedia', new TextField('LinkedInLink', 'link to LinkedIn (include http)'));
         $fields->addFieldToTab('Root.SocialMedia', new TextField('TwitterLink', 'link to Twitter (include http)'));
         $fields->addFieldToTab('Root.SocialMedia', new TextField('FacebookLink', 'link to Facebook (include http)'));
         $fields->addFieldToTab('Root.SocialMedia', new TextField('YouTubeLink', 'link to YouTube (include http)'));
+        $fields->addFieldToTab('Root.HTML', new TextAreaField('HTMLHeaderSnippet', 'HTML to include in the Header of the site'));
 
-        $fields->addFieldToTab('Root.Footer', new TextareaField('FooterLinks', 'Footer links - one link per line. The format is: Page or external web address&lt;space&gt;Text to use as the link<br>For example - /about-us About our company <br>or http://www.google.co.uk Google'));
-        $fields->addFieldToTab('Root.Header', new TextareaField('HeaderLinks', 'Header links - one link per line. The format is: Page or external web address&lt;space&gt;Text to use as the link<br>For example - /about-us About our company <br>or http://www.google.co.uk Google'));
-        $fields->addFieldToTab('Root.Main', new TextField('CommunityEnablingHeader', 'Community enabling header'));
+        $fields->addFieldToTab('Root.Footer', new TextareaField('FooterLinks', 'Footer links - one link per line. The format is: Page or external web address&lt;space&gt;Text to use as the link<br>For example - /about-us About our organisation <br>or http://www.google.co.uk Google'));
+        $fields->addFieldToTab('Root.Header', new TextareaField('HeaderLinks', 'Header links - one link per line. The format is: Page or external web address&lt;space&gt;Text to use as the link<br>For example - /about-us About our organisation <br>or http://www.google.co.uk Google'));
        
         $boxConfig = GridFieldConfig::create()->addComponents(
               new GridFieldSortableRows('SortOrder'),                         

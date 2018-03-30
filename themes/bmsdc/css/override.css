@@ -1,0 +1,66 @@
+<style>
+
+	/* BREAK POINTS */
+
+		@media (max-width: 960px) {
+			.colophon.left { display: none; }
+			.colophon.right { color: #6699cc; }
+			.colophon.right a { white-space: nowrap; }
+		}
+
+		@media (max-width: 660px) {
+			#homePageWidgets { width: auto; }
+			.boxText h2 { font-size: 1em; }
+			.box, .box.lander { width:47%; }
+		}
+
+		@media (max-width: 500px) {
+			.boxText { font-size: 0.7em; }
+		}
+
+		@media (max-width: 400px) {
+			.HomePage .box img.icon { margin-top: -10px; }
+		}
+
+	/* FORMS (AND BUTTONS WHICH LEAD TO FORMS) */
+		
+		pre { background-color: #50D050; display: inline-block; font-family: arial; font-weight: bold; padding: 10px 20px; white-space: pre-wrap; }
+		pre a { color: #fff; }
+		pre a:hover { color: #fff; text-decoration: underline; }
+		pre:after { color: #fff; content: " \00BB"; }
+
+		input[type='text'], textarea { background: #fff; }
+		textarea { height: auto; }
+		.button, button, input[type='submit'], input[type='reset'], input[type='button'] { background-color: #7AA845; color: #fff; }
+		.optionset li { list-style-type: none !important; }
+		.optionset li label { display: inline; margin-left: 10px; }
+		input.email { width: 50%; }
+		.userform label, .userform legend { margin-top: 10px; }
+
+	/* MISCELLANEOUS */
+		
+		.required { color: #ff0000; }
+		.hidden { display: none; }
+
+	/* PAGINATION */	
+		
+		.pagination ul { list-style-type: none; padding: 30px 0 0 0; }
+		.pageContent .pagination li { float: left; line-height: 1; list-style-type: none; }
+		.pagination a, .pagination span { border-right: 1px solid #c1c1c1; display: block; float: left; font-size: 1.2em; font-weight: bold; padding: 0 8px; }
+		.pagination a.last { border-right: none; }
+		.pagination a.disabled { color: silver; }
+		.pagination .prev a, .pagination .next a { border: none; padding: 0; }
+		.pagination .prev a { padding-right: 16px; }
+		.pagination .next a { padding-left: 16px; }
+		.searchResults a.next { border-right: 0; }
+		.searchResults .pageCount { clear: left; color:grey; font-size: 1em; padding-top: 16px; }
+		#PageNumbers p { clear: left; color: grey; padding-top: 12px; text-align: center; }
+
+	/* REVISION TO THEME */
+
+		#headerTools img.strapline { padding: 20px 0 0 0; }
+		.box { background-color:#7AA845; }
+		.box.lander:before { padding-top:50%; }
+		.headerPanel, #colophonFooter, #translateWrap { background-color:#7AA845; }
+
+</style>

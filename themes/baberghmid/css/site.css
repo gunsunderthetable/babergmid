@@ -16,7 +16,7 @@ a:hover {color:silver;}
 
 /*---------------------------header----------------------------------*/
 .headerPanel {
-    background-color:#7AA845;
+    background-color:#6699cc;
     height:200px;
     position:relative;
     color:white;
@@ -27,12 +27,11 @@ a:hover {color:silver;}
     width:35%;
     float:left;
     padding:0 0 0 2%;
-    position:relative;
 }
 #headerText img {
     width:80%;
     height:auto;
-    padding:10px 0 0 10%;
+    padding:10px 0 0 27px;
 }
 
 #headerTools {
@@ -46,13 +45,12 @@ a:hover {color:silver;}
     text-align:right;
     padding:10px 5% 0 0;
 }
-
 #headerTools img.strapline {
     width:85%;
     float:right;
     height:auto;
     display:block;
-    padding:20px 0 0 0;
+    padding:20px 5% 0 0;
 }
 
 #headerTools p a {
@@ -79,7 +77,6 @@ a:hover {color:silver;}
 #socialButtons img:hover {
     opacity:0.6;
 }
-
 /*-------------------------------------- search ------------------------------------------*/
 #searchWrapper {
     height:40px;
@@ -143,11 +140,11 @@ form#SearchForm_SearchForm input[type="submit"] {
 
 .box{
     position: relative;
-    width: 23%;   
+    width: 31.2%;	
     margin:0 1% 2%;
     color:silver;
     float:left;    
-    background:#7AA845;
+    background:#6699cc;
     -webkit-transition: all .3s ease; -moz-transition: all .3s ease; transition: all .3s ease;
     border-radius:24px;
 }
@@ -171,7 +168,7 @@ form#SearchForm_SearchForm input[type="submit"] {
     position:absolute;
     width:80%;
     left:10%;
-    top:65%;
+    top:75%;
 }
 
 
@@ -227,58 +224,22 @@ form#SearchForm_SearchForm input[type="submit"] {
 .box img.icon  {
     text-decoration:none;
     display: block;
-    width: 28%;
+    width: 36%;
     height: auto; 
     margin: -20px 0 0; 
     position: absolute; 
-    top: 28%;
+    top: 20%;
     opacity:1;
     z-index: 10;
     overflow: hidden;
     /*opacity: 0; */
     -webkit-transition: all .3s ease; -moz-transition: all .3s ease; transition: all .3s ease;
-    left: 36%;
+    left: 32%;
 }
 
 .box:hover {cursor:pointer;}
 
 .box:hover {box-shadow:0 0 0 3pt #aaa;}
-
-/*-----------------------------------------the call to action buttons in the header--------------------------------*/
-#actionButtons {
-    position: relative;
-    padding-left: 24px;
-}
-.box.headerBox {
-    margin-top:12px;
-    background:#006393;
-    width:28.25%;
-    border-radius:12px;
-}
-.box.headerBox img.icon {
-    position:static;
-    float:left;
-    margin:0;
-    width:34%;
-    height:auto;
-    padding:12% 8% 0 10% ;
-}
-.box.headerBox:before{
-    content: "";
-    display: block;
-    padding-top: 50%; 
-}
-.box.headerBox .boxText {
-    position:static;
-    float:left;
-    width:auto;
-    padding-top:17%;
-}
-.box.headerBox .boxText h2 {
-    font-size: 1.2em;
-
-}
-
 /*----------------------------------------home page news panel--------------------------------*/
 
 #news {
@@ -384,13 +345,8 @@ form#SearchForm_SearchForm input[type="submit"] {
     padding:0 5%;
     width:90%;
     margin: 30px 0 ;
-    /*min-height:250px;*/
+    min-height:250px;
 }
-
-.LandingPage #standardPage {
-    margin:18px 0;
-}
-
 #landingPageContent {
     clear:left;
     padding:10px 0 30px;
@@ -541,45 +497,37 @@ td.budgetAmount {
     float:left;
     line-height:1;
     list-style-type:none;
+        
 }
 
 .pagination a, .pagination .noLink{
-    float:left;
-    display:block;
-    border-right:1px solid #c1c1c1;
-    padding:0 8px;
+	float:left;
+	display:block;
+	border-right:1px solid #c1c1c1;
+	padding:0 8px;
         font-weight:bold;
         font-size:1.2em;
 }
 
-.pagination a.last 
+.pagination a.last
 {
-    border-right:none;
+	border-right:none;
 }
 .pagination a.disabled {
     color:silver;
 }
 .pagination .prev a,
 .pagination .next a{
-    border:none;
-    padding:0;
+	border:none;
+	padding:0;
 }
 
 .pagination .prev a{
-    padding-right:16px;
+	padding-right:16px;
 }
 
 .pagination .next a{
-    padding-left:16px;
-}
-.searchResults a.next {
-    border-right:0;
-}
-.searchResults .pageCount {
-    clear:left;
-    padding-top:16px;
-    font-size:1em;
-    color:grey;
+	padding-left:16px;
 }
 /*----------------------------------footer-------------------------------*/
 
@@ -641,7 +589,7 @@ td.budgetAmount {
     padding:0;
 }
 #translateWrap {
-    background:#7AA845;
+    background:#6699cc;
     clear:left;
     width:97.7%;
     margin:0 auto;
@@ -665,7 +613,7 @@ td.budgetAmount {
     font-size:0.8em;
 }
 #colophonFooter {
-    background:#7AA845;    
+    background:#6699cc;    
     padding:10px 0;
     margin-top:12px;
     height:20px;
@@ -754,11 +702,8 @@ input[type="text"],textarea {
     #homeLinks h2, .tweets h2, #jobs h2 {margin:0 0 12px 0;}
     #homeLinks, #jobs {margin:0;}
     #homeLinks ul {margin-bottom:.5%;}
-    #headerText {width: 30%;}
-    #headerText img {width:100%;padding:20px 0 0;}
-    #headerTools {width:65%;}
+    #headerText img {width:100%;}
     #twinLogos {width:80%;}
-    #headerPanel {height: auto;}
 
     .pageContent {width:60%;}
     .rightPanel {width:35%;margin-left:5%;}
@@ -768,9 +713,10 @@ input[type="text"],textarea {
     #news h2, #features h2 {font-size:1.6em;}    
     #news h1, #features h1, #homePageWidgets h1 {font-size:2em;}    
     #landingPageBreak {padding-top:22px;}
+    
+
+
 }
-
-
 @media (max-width: 800px) {
     .azFooter p {font-size:1em;}
     .azFooter a {padding-right:1px;}
@@ -780,29 +726,23 @@ input[type="text"],textarea {
     #translateWrap {text-align:center;}
     #news, #features, #homePageWidgets {width:100%;}
     #news, #homePageWidgets {padding-top:10px;margin-top:20px;border-top:1px solid silver;}
-    .box.headerBox.first {margin-left:0;}
-    .box.headerBox.last {margin-right:0;}
-    .box.headerBox {width: 29.5%}
-    #boxLanderWrap {width: 94%;padding: 0 3%;}
 }
 
-@media (max-width: 700px) {
+@media (max-width: 660px) {
     .mobile {display:block;}
     .pageContent img {display:none;}
     a.mobileNav {display:block;position:absolute;left:5%;top:15%;}
     .container {padding:0;width:100%;overflow:hidden;}
     .headerPanel {height:auto;}
-    #actionButtons {padding-left: 5%}
+    
     #headerText img {width:60%;margin:0 0 0 20%;padding:0;}
-    #headerText {padding:4px 0 0 0;}
+    #headerText {padding:4px 0 0 0;border-bottom:1px solid white;}
     #headerTools img.strapline, #searchWrapper {width:90%;}
     #headerText, .sideBar, #homePanel,#headerTools {width:100%;}
-    #headerTools {height:auto;padding-bottom:18px;}
     .tablet,.desktop {display:none;}
-    #searchWrapper {padding:0 0 0 5%;}
-
-    .box, .box.lander {width:47%;margin:12px 1.5% 4px ;}
-    .boxText h2 {font-size:1.4em;}
+    
+    .box, .box-lander {width:97%;margin:12px 1.5% 4px ;}
+    .boxText h2 {font-size:3em;}
 
     .azFooter {display:none;}
     
